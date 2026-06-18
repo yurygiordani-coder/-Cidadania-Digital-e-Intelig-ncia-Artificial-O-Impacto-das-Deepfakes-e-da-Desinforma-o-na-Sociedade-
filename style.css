@@ -1,0 +1,180 @@
+/* Configurações Globais e Paleta de Cores */
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --accent-color: #28a745;
+}
+
+/* Classe aplicada via JS para o Modo Escuro (Rubrica Nível 4) */
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-color: #f4f7f6;
+    --primary-color: #375a7f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar com Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+#btn-dark-mode {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#btn-dark-mode:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* Container de Layout Responsivo (Flexbox) */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Estilização dos Cards */
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Botões Gerais */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+#btn-saiba-mais, .btn-enviar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+}
+
+#btn-saiba-mais:hover, .btn-enviar:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Grid/Flex para os botões do Quiz */
+.opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn-opcao {
+    background-color: #e2e8f0;
+    color: #333;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.btn-opcao:hover {
+    background-color: #cbd5e1;
+}
+
+/* Formulário */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group input, .form-group textarea {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Classes Utilitárias */
+.hidden {
+    display: none;
+}
+
+.resultado-texto {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.sucesso-texto {
+    margin-top: 1rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #aaa;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+/* Media Query para telas maiores (Melhoria de Responsividade) */
+@media (min-width: 600px) {
+    .opcoes-container {
+        flex-direction: row;
+    }
+    .btn-opcao {
+        flex: 1;
+    }
+}
