@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciência Digital - Deepfakes e Desinformação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>Consciência Digital</h1>
+        <button id="btn-dark-mode">Alternar Modo Escuro</button>
+    </header>
+
+    <main class="container">
+        <section class="card intro-section">
+            <h2>O que são Deepfakes?</h2>
+            <p>Deepfakes são vídeos, áudios ou imagens gerados por Inteligência Artificial que imitam a aparência e a voz de pessoas reais de forma muito convincente. Eles representam um grande desafio para a verdade e a cidadania digital.</p>
+            <button id="btn-saiba-mais">Como Identificar?</button>
+            <div id="info-extra" class="hidden">
+                <h3>Dicas Rápidas para Detectar:</h3>
+                <ul>
+                    <li>Fique atento a piscadas de olhos não naturais ou ausentes.</li>
+                    <li>Observe falhas nas bordas do rosto ou sombras estranhas.</li>
+                    <li>Desconfie de movimentos de boca desalinhados com o áudio.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card quiz-section">
+            <h2>Teste seu Conhecimento</h2>
+            <p id="pergunta-texto">Uma notícia em vídeo bombástica aparece na sua rede social com um político falando algo absurdo, mas a voz parece ligeiramente robótica. O que você faz?</p>
+            <div class="opcoes-container">
+                <button class="btn-opcao" onclick="verificarResposta(true)">Compartilho imediatamente para alertar meus amigos.</button>
+                <button class="btn-opcao" onclick="verificarResposta(false)">Procuro a notícia em portais confiáveis antes de repassar.</button>
+            </div>
+            <p id="resultado-quiz" class="resultado-texto"></p>
+        </section>
+
+        <section class="card form-section">
+            <h2>Denuncie ou Envie sua Dúvida</h2>
+            <p>Violações de direitos digitais ou suspeitas de deepfakes maliciosas podem ser relatadas. Deixe seu contato para receber materiais educativos.</p>
+            
+            <form id="form-contato">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required placeholder="Seu nome completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem">Relato ou Dúvida:</label>
+                    <textarea id="mensagem" required placeholder="Digite aqui o que você encontrou ou sua dúvida..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Enviar Dados</button>
+            </form>
+            <p id="mensagem-sucesso" class="hidden sucesso-texto"></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Portal Cidadania Digital. Desenvolvido para fins educacionais.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
