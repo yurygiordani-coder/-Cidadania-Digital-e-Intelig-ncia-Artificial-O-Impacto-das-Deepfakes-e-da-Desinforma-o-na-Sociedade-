@@ -1,27 +1,31 @@
-/* Configurações Globais e Paleta de Cores */
+/* Definição de Variáveis e Cores (Claro / Escuro) */
 :root {
-    --bg-color: #f4f7f6;
+    --bg-color: #f0f4f8;
     --card-bg: #ffffff;
-    --text-color: #333333;
-    --primary-color: #007bff;
-    --primary-hover: #0056b3;
-    --accent-color: #28a745;
+    --text-color: #2d3748;
+    --primary-color: #4a5568;
+    --accent-color: #3182ce;
+    --success-color: #38a169;
+    --danger-color: #e53e3e;
+    --border-color: #e2e8f0;
 }
 
-/* Classe aplicada via JS para o Modo Escuro (Rubrica Nível 4) */
 body.dark-mode {
-    --bg-color: #1a1a1a;
-    --card-bg: #2d2d2d;
-    --text-color: #f4f7f6;
-    --primary-color: #375a7f;
+    --bg-color: #1a202c;
+    --card-bg: #2d3748;
+    --text-color: #f7fafc;
+    --primary-color: #edf2f7;
+    --accent-color: #63b3ed;
+    --border-color: #4a5568;
 }
 
+/* Reset Global */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.3s, color 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body {
@@ -32,145 +36,187 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar com Flexbox */
+/* Cabeçalho Baseado em Flexbox */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem 2rem;
-}
-
-.navbar h1 {
-    font-size: 1.5rem;
+    background-color: var(--card-bg);
+    padding: 1.2rem 2rem;
+    border-bottom: 2px solid var(--border-color);
 }
 
 #btn-dark-mode {
-    background-color: transparent;
-    border: 2px solid white;
+    background-color: var(--accent-color);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 #btn-dark-mode:hover {
-    background-color: white;
-    color: var(--primary-color);
+    filter: brightness(1.1);
 }
 
-/* Container de Layout Responsivo (Flexbox) */
+/* Container Estrutural */
 .container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 800px;
+    gap: 2rem;
+    max-width: 900px;
     width: 100%;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Estilização dos Cards */
+/* Cards de Conteúdo */
 .card {
     background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    color: var(--accent-color);
 }
 
 .card p {
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+/* Lista de Riscos */
+ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+ul li {
+    margin-bottom: 0.8rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
 }
 
-/* Botões Gerais */
-button {
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
+/* Grid de Dicas (Layout Moderno) */
+.grid-dicas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-#btn-saiba-mais, .btn-enviar {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.7rem 1.2rem;
-    font-size: 1rem;
+.dica-item {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-color);
 }
 
-#btn-saiba-mais:hover, .btn-enviar:hover {
-    background-color: var(--primary-hover);
+.dica-item h4 {
+    margin-bottom: 0.4rem;
 }
 
-/* Grid/Flex para os botões do Quiz */
+/* Seção do Quiz */
 .opcoes-container {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 .btn-opcao {
-    background-color: #e2e8f0;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     padding: 1rem;
     text-align: left;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
     font-size: 0.95rem;
 }
 
 .btn-opcao:hover {
-    background-color: #cbd5e1;
+    border-color: var(--accent-color);
+    background-color: var(--border-color);
 }
 
-/* Formulário */
+/* Botões Gerais */
+#btn-saiba-mais, .btn-enviar {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Estrutura de Formulários */
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .form-group input, .form-group textarea {
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: var(--card-bg);
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-color);
     color: var(--text-color);
+    font-size: 1rem;
 }
 
-/* Classes Utilitárias */
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Classes Utilitárias do JS */
 .hidden {
     display: none;
 }
 
 .resultado-texto {
-    margin-top: 1rem;
-    font-weight: bold;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
 }
 
 .sucesso-texto {
     margin-top: 1rem;
-    color: var(--accent-color);
-    font-weight: bold;
+    padding: 1rem;
+    background-color: rgba(56, 161, 105, 0.1);
+    color: var(--success-color);
+    border-radius: 6px;
+    border-left: 4px solid var(--success-color);
 }
 
 /* Rodapé */
 .footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #222;
-    color: #aaa;
-    margin-top: auto;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
 }
 
-/* Media Query para telas maiores (Melhoria de Responsividade) */
-@media (min-width: 600px) {
+/* Responsividade Avançada */
+@media (min-width: 768px) {
+    .grid-dicas {
+        flex-direction: row;
+    }
+    .dica-item {
+        flex: 1;
+    }
     .opcoes-container {
         flex-direction: row;
     }
