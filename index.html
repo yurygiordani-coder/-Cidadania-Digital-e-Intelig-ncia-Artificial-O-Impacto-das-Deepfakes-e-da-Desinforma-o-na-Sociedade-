@@ -9,58 +9,82 @@
 <body>
 
     <header class="navbar">
-        <h1>Consciência Digital</h1>
+        <h1>Portal Cidadania Digital</h1>
         <button id="btn-dark-mode">Alternar Modo Escuro</button>
     </header>
 
     <main class="container">
         <section class="card intro-section">
-            <h2>O que são Deepfakes?</h2>
-            <p>Deepfakes são vídeos, áudios ou imagens gerados por Inteligência Artificial que imitam a aparência e a voz de pessoas reais de forma muito convincente. Eles representam um grande desafio para a verdade e a cidadania digital.</p>
-            <button id="btn-saiba-mais">Como Identificar?</button>
+            <h2>O que são Deepfakes e como afetam a sociedade?</h2>
+            <p>Deepfakes são conteúdos em vídeo, áudio ou imagem modificados ou criados do zero por meio de algoritmos de Inteligência Artificial (redes neurais). Embora a tecnologia tenha usos legítimos no cinema, ela é frequentemente usada para espalhar <strong>desinformação</strong>, fraudes e manchar a reputação de pessoas.</p>
+            
+            <button id="btn-saiba-mais">Ver Impactos Reais</button>
+            
             <div id="info-extra" class="hidden">
-                <h3>Dicas Rápidas para Detectar:</h3>
+                <h3>Principais Riscos da Tecnologia:</h3>
                 <ul>
-                    <li>Fique atento a piscadas de olhos não naturais ou ausentes.</li>
-                    <li>Observe falhas nas bordas do rosto ou sombras estranhas.</li>
-                    <li>Desconfie de movimentos de boca desalinhados com o áudio.</li>
+                    <li><strong>Fraudes Financeiras:</strong> Golpistas clonam a voz de familiares para pedir dinheiro por aplicativos de mensagem.</li>
+                    <li><strong>Manipulação Eleitoral:</strong> Vídeos falsos de candidatos podem influenciar os eleitores de forma desonesta.</li>
+                    <li><strong>Danos de Reputação:</strong> Criação de declarações falsas atribuídas a especialistas ou cidadãos comuns.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="card quiz-section">
-            <h2>Teste seu Conhecimento</h2>
-            <p id="pergunta-texto">Uma notícia em vídeo bombástica aparece na sua rede social com um político falando algo absurdo, mas a voz parece ligeiramente robótica. O que você faz?</p>
-            <div class="opcoes-container">
-                <button class="btn-opcao" onclick="verificarResposta(true)">Compartilho imediatamente para alertar meus amigos.</button>
-                <button class="btn-opcao" onclick="verificarResposta(false)">Procuro a notícia em portais confiáveis antes de repassar.</button>
+        <section class="card guia-section">
+            <h2>Como Detectar Mídias Manipuladas por IA?</h2>
+            <p>A tecnologia está evoluindo rapidamente, mas os geradores de IA ainda deixam "rastros" sutis. Fique atento a estes elementos:</p>
+            
+            <div class="grid-dicas">
+                <div class="dica-item">
+                    <h4>Anomalias Visuais</h4>
+                    <p>Piscadas de olhos irregulares, falta de sincronia entre a fala e os lábios, e sombras desalinhadas no rosto.</p>
+                </div>
+                <div class="dica-item">
+                    <h4>Texturas Estranhas</h4>
+                    <p>Pele excessivamente lisa ("efeito porcelana"), cabelos que parecem pintados ou borrados nas bordas.</p>
+                </div>
+                <div class="dica-item">
+                    <h4>Contexto e Fontes</h4>
+                    <p>Sempre verifique se a mesma notícia ou declaração foi publicada por veículos de comunicação confiáveis.</p>
+                </div>
             </div>
+        </section>
+
+        <section class="card quiz-section">
+            <h2>Simulador de Cidadania Digital</h2>
+            <p id="pergunta-texto">Você recebeu um áudio em um grupo de mensagens onde uma voz idêntica à de uma celebridade faz um alerta urgente sobre um perigo iminente na sua cidade. Como você reage?</p>
+            
+            <div class="opcoes-container">
+                <button class="btn-opcao" onclick="verificarResposta('errado')">Repasso imediatamente nos meus grupos para proteger as pessoas o quanto antes.</button>
+                <button class="btn-opcao" onclick="verificarResposta('correto')">Não compartilho. Pesquiso em portais locais de notícias para confirmar o alerta.</button>
+            </div>
+            
             <p id="resultado-quiz" class="resultado-texto"></p>
         </section>
 
         <section class="card form-section">
-            <h2>Denuncie ou Envie sua Dúvida</h2>
-            <p>Violações de direitos digitais ou suspeitas de deepfakes maliciosas podem ser relatadas. Deixe seu contato para receber materiais educativos.</p>
+            <h2>Canal de Dúvidas e Sugestões</h2>
+            <p>Quer sugerir um tema ou relatar uma dúvida sobre segurança digital? Deixe sua mensagem abaixo.</p>
             
             <form id="form-contato">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" required placeholder="Seu nome completo">
+                    <input type="text" id="nome" required placeholder="Digite seu nome completo">
                 </div>
                 
                 <div class="form-group">
-                    <label for="mensagem">Relato ou Dúvida:</label>
-                    <textarea id="mensagem" required placeholder="Digite aqui o que você encontrou ou sua dúvida..."></textarea>
+                    <label for="mensagem">Sua Dúvida ou Relato:</label>
+                    <textarea id="mensagem" required placeholder="Descreva aqui o assunto ou comportamento suspeito que você deseja entender melhor..."></textarea>
                 </div>
                 
-                <button type="submit" class="btn-enviar">Enviar Dados</button>
+                <button type="submit" class="btn-enviar">Enviar Informações</button>
             </form>
             <p id="mensagem-sucesso" class="hidden sucesso-texto"></p>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 Portal Cidadania Digital. Desenvolvido para fins educacionais.</p>
+        <p>&copy; 2026 Portal de Conscientização Digital. Conteúdo construído para a atividade de recuperação.</p>
     </footer>
 
     <script src="script.js"></script>
